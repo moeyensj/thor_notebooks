@@ -26,4 +26,4 @@ cd /gscratch/astro/moeyensj/projects/thor/thor_notebooks/paper1/scripts
 source ~/.bashrc
 conda info -a
 conda activate thor_py36
-python runIODonZTF_2.py
+python -u runIODonZTF_2.py

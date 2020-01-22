@@ -86,7 +86,7 @@ def initialOrbitDetermination(observations,
     cluster_ids = list(grouped.index.values)
     obs_ids = grouped.values.tolist()
     
-    chunk_size = 1000
+    chunk_size = 28000
     num_chunks = int(np.round(len(cluster_ids) / chunk_size))
     if num_chunks == 0 and len(cluster_ids) != 0:
         num_chunks = 1
@@ -111,7 +111,7 @@ def initialOrbitDetermination(observations,
              
             orbits_df = pd.DataFrame(orbits, columns=["orbit_id", "cluster_id", "epoch_mjd", "obj_x", "obj_y", "obj_z", "obj_vx", "obj_vy", "obj_vz", "chi2"])
             orbits_dfs.append(orbits_df)
-
+            p.close()
     
     orbits_df = pd.concat(orbits_dfs)
     orbits_df.dropna(inplace=True)
